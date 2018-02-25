@@ -50,11 +50,16 @@ if(window.caches){
 }
 // Tester si le navigateur peut gerer les notifications
 // et si l'utilisateur n'a pas bloqué les notifications
+// None persitante notification
 if(window.Notification && window.Notification !== 'deny'){
     // On demande une permission de les affichées
    Notification.requestPermission(perm=>{
        if(perm === 'granted'){
-           const notif =  new Notification('Hello notification')
+           const options= {
+               body:'Je suis le body',
+               icon: 'images/icons/icon-72x72.png'
+           }
+           const notif =  new Notification('Hello notification',options)
        }else{
            console.log('autorisation de recevoir des notifications a été refusé')
        }

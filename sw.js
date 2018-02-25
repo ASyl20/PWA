@@ -83,3 +83,6 @@ self.addEventListener('fetch',evt=>{
         })
     )
 })
+// Notification depuis le Sw
+// Pour fonctionner hors app 
+self.registration.showNotification('Notif depuis le sw',{body:'je suis une notification dite persistante'})
