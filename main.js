@@ -48,3 +48,15 @@ if(window.caches){
     // Methode keys retourne une promesse
     // caches.keys().then(console.log)
 }
+// Tester si le navigateur peut gerer les notifications
+// et si l'utilisateur n'a pas bloqué les notifications
+if(window.Notification && window.Notification !== 'deny'){
+    // On demande une permission de les affichées
+   Notification.requestPermission(perm=>{
+       if(perm === 'granted'){
+           const notif =  new Notification('Hello notification')
+       }else{
+           console.log('autorisation de recevoir des notifications a été refusé')
+       }
+   })
+}
